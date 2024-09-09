@@ -39,4 +39,13 @@ print(len(goodwords))
 print(goodwords[0:100])
 
 
+allowedwords = []
 
+for word in allowedwords:
+        remainingletters = userset-set(word)
+        for guess in allowedwords:
+                if ((guess.intersection(remainingletters) == remainingletters) and (guess[-1] == word[0]) or (guess.intersection(remainingletters) == remainingletters) and (word[-1] == guess[0])) 
+
+
+
+secondword = [] 
