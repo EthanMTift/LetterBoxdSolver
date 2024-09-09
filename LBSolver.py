@@ -13,7 +13,7 @@ print(len(wordlist))
 alphabet = set(string.ascii_lowercase)
 userletters = input("Enter 12 unique letters separated by spaces: ").split()
 if len(userletters) != 12 or len(set(userletters)) != 12:
-    print("Please enter exactly 12 unique letters.")
+        print("Please enter exactly 12 unique letters.")
     
 
 userset = set(userletters)
@@ -22,5 +22,17 @@ print(badletters)
 wordlist = [word for word in wordlist if not badletters.intersection(set(word))]
 print(len(wordlist))
 print(wordlist[0:100])
+goodwords = []
+for word in wordlist:
+        for index, letter in enumerate(word):
+                if (index == (len(word)-1)):
+                        goodwords.append(word)
+                else:
+                        if (word[index + 1] == word[index]):
+                                break
+                        
+print(len(goodwords))
+print(goodwords[0:100])
+
 
 
