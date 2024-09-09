@@ -37,6 +37,17 @@ for word in wordlist:
                         
 print(len(goodwords))
 print(goodwords[0:100])
+pogwords = []
+print(groups[1])
+for word in goodwords:
+        for index, letter in enumerate(word):
+                if (index == (len(word)-1)):
+                        pogwords.append(word)
+                else:
+                        if (((word[index] in groups[0]) and (word[index+1] in groups[0])) or ((word[index] in groups[1]) and (word[index+1] in groups[1])) or ((word[index] in groups[2]) and (word[index+1] in groups[2])) or ((word[index] in groups[3]) and (word[index+1] in groups[3]))):
+                                break
 
+print(len(pogwords))
+print(pogwords[0:100])
 
 
