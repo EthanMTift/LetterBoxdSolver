@@ -1,5 +1,6 @@
 import string
 from LBFilter import filter_words
+import numpy as np
 
 
 def solve_letters(userletters):
@@ -66,7 +67,7 @@ def solve_letters(userletters):
 
 
     
-    for i in range (7, 0, -1):
+    for i in np.arange (7, 0, -0.1):
           answers = filter_words(allowedwords, i, userset)
           if answers:
                 break
