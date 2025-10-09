@@ -1,4 +1,6 @@
 import string
+from LBFilter import filter_words
+
 
 def solve_letters(userletters):
     with open('words_alpha.txt', 'r') as file:
@@ -58,24 +60,22 @@ def solve_letters(userletters):
                 else:
                         if (((word[index] in groups[0]) and (word[index+1] in groups[0])) or ((word[index] in groups[1]) and (word[index+1] in groups[1])) or ((word[index] in groups[2]) and (word[index+1] in groups[2])) or ((word[index] in groups[3]) and (word[index+1] in groups[3]))):
                                 break
-
-    validguesses = {'ZORA IS AWESOME'}
-
-    for word in allowedwords:
-        remainingletters = userset-set(word)
-        for guess in allowedwords:
-                if (set(guess).intersection(remainingletters) == remainingletters) and (guess[-1] == word[0]):
-                        validguesses.add((guess, word))
-                elif (set(guess).intersection(remainingletters) == remainingletters) and (word[-1] == guess[0]): 
-                        validguesses.add((word, guess))
-                        
+        
 
 
-    for items in validguesses:
+
+
+    
+    for i in range (7, 0, -1):
+          answers = filter_words(allowedwords, i, userset)
+          if answers:
+                break
+    for items in answers:
+        print("----------------------------------")
         print(items)
         print("----------------------------------")
 
-    print(len(validguesses))
+    
 
 
 
